@@ -13,4 +13,11 @@
     <name>Hello World</name>
     <packaging>war</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+        </dependency>
+    </dependencies>
+
 </project>
