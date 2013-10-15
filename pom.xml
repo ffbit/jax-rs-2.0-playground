@@ -59,7 +59,7 @@
 
         <dependency>
             <groupId>com.sun.jersey.jersey-test-framework</groupId>
-            <artifactId>jersey-test-framework-grizzly2</artifactId>
+            <artifactId>jersey-test-framework-http</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -107,7 +107,7 @@
             </dependency>
             <dependency>
                 <groupId>com.sun.jersey.jersey-test-framework</groupId>
-                <artifactId>jersey-test-framework-grizzly2</artifactId>
+                <artifactId>jersey-test-framework-http</artifactId>
                 <version>${jersey.version}</version>
             </dependency>
         </dependencies>
