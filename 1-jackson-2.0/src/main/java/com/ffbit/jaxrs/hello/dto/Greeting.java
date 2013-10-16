@@ -1,8 +1,5 @@
 package com.ffbit.jaxrs.hello.dto;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
-//@XmlRootElement
 public class Greeting {
     private String message;
 
