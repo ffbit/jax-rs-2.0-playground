@@ -2,4 +2,4 @@
 
 [![Build Status](https://travis-ci.org/ffbit/jax-rs-2.0-playground.png?branch=master)](https://travis-ci.org/ffbit/jax-rs-2.0-playground)
 
-Requires JDK 1.7
+Requires JDK 1.6+
