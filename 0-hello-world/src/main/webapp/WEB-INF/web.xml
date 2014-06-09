@@ -8,16 +8,59 @@
 
     <servlet>
         <servlet-name>Jersey Dispatcher Servlet</servlet-name>
-        <servlet-class>
-            com.sun.jersey.spi.container.servlet.ServletContainer
-        </servlet-class>
+        <servlet-class>org.glassfish.jersey.servlet.ServletContainer</servlet-class>
         <init-param>
-            <param-name>com.sun.jersey.config.property.packages</param-name>
+            <param-name>jersey.config.server.provider.packages</param-name>
             <param-value>
+                <!--
+                    Your application resource packages go here
+                -->
                 com.ffbit.jaxrs.hello.resources
-                org.codehaus.jackson.jaxrs
+
+                <!--
+                    Jackson 2.x JAX-RS @Providers
+                -->
+                <!-- JSON -->
+                com.fasterxml.jackson.jaxrs.json
+
+                <!-- XML  -->
+                <!--
+                com.fasterxml.jackson.jaxrs.xml
+                -->
+
+                <!--
+                    Jersey declarative hypermedia support
+                -->
+                org.glassfish.jersey.linking
             </param-value>
         </init-param>
+
+        <init-param>
+            <param-name>javax.ws.rs.Application</param-name>
+            <param-value>com.ffbit.jaxrs.hello.app.MyApplication</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>jersey.config.server.tracing</param-name>
+            <param-value>ALL</param-value>
+        </init-param>
+
+        <init-param>
+            <param-name>jersey.config.server.provider.scanning.recursive</param-name>
+            <param-value>org.glassfish.jersey.filter.LoggingFilter</param-value>
+        </init-param>
+
+        <!--
+            For complete list of Jersey's configuration parameters names visit
+            the "Appendix A. Configuration Properties" at
+            https://jersey.java.net/documentation/latest/user-guide.html#appendix-properties
+        -->
+
+        <init-param>
+            <param-name>jersey.config.server.provider.scanning.recursive</param-name>
+            <param-value>false</param-value>
+        </init-param>
+
         <load-on-startup>1</load-on-startup>
     </servlet>
 
