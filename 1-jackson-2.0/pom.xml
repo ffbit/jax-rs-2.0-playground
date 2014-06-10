@@ -14,10 +14,6 @@
     <packaging>war</packaging>
 
     <dependencies>
-        <dependency>
-            <groupId>com.fasterxml.jackson.jaxrs</groupId>
-            <artifactId>jackson-jaxrs-json-provider</artifactId>
-        </dependency>
     </dependencies>
 
 </project>
