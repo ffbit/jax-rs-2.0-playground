@@ -3,6 +3,7 @@ package com.ffbit.jaxrs.hello.resources;
 import com.ffbit.jaxrs.hello.dto.Greeting;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
+import org.glassfish.jersey.test.TestProperties;
 import org.glassfish.jersey.test.grizzly.GrizzlyTestContainerFactory;
 import org.glassfish.jersey.test.spi.TestContainerException;
 import org.glassfish.jersey.test.spi.TestContainerFactory;
@@ -18,6 +19,9 @@ public class HelloWorldResourceTest extends JerseyTest {
 
     @Override
     protected Application configure() {
+        enable(TestProperties.LOG_TRAFFIC);
+        enable(TestProperties.DUMP_ENTITY);
+
         return new ResourceConfig()
                 .packages("com.ffbit.jaxrs.hello.resources", "com.ffbit.jaxrs.hello.providers");
     }
