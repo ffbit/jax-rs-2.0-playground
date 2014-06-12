@@ -1,6 +1,8 @@
 package com.ffbit.jaxrs.hello.resources;
 
+import com.fasterxml.jackson.jaxrs.json.JacksonJsonProvider;
 import com.ffbit.jaxrs.hello.dto.Greeting;
+import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.server.ResourceConfig;
 import org.glassfish.jersey.test.JerseyTest;
 import org.glassfish.jersey.test.TestProperties;
@@ -23,12 +25,22 @@ public class HelloWorldResourceTest extends JerseyTest {
         enable(TestProperties.DUMP_ENTITY);
 
         return new ResourceConfig()
-                .packages("com.ffbit.jaxrs.hello.resources", "com.ffbit.jaxrs.hello.providers");
+                .packages("com.ffbit.jaxrs.hello.resources", "com.fasterxml.jackson.jaxrs.json");
     }
 
     @Override
     protected TestContainerFactory getTestContainerFactory() throws TestContainerException {
         return new GrizzlyTestContainerFactory();
+    }
+
+    @Override
+    protected void configureClient(ClientConfig config) {
+        /**
+         * There was no need to this in Jersey 2.7,
+         * but in Jersey 2.9 something went wrong.
+         */
+        config.register(JacksonJsonProvider.class);
+        super.configureClient(config);
     }
 
     @Test
