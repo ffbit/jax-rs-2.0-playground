@@ -9,13 +9,11 @@ import org.glassfish.jersey.linking.InjectLinks;
 
 import javax.ws.rs.core.Link;
 import javax.ws.rs.core.MediaType;
-import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
 /**
  * Created by ffbit on 4/11/14.
  */
-@XmlRootElement
 public class User {
     private int id;
     private String name;

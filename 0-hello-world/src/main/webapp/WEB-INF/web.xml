@@ -24,9 +24,7 @@
                 com.fasterxml.jackson.jaxrs.json
 
                 <!-- XML  -->
-                <!--
                 com.fasterxml.jackson.jaxrs.xml
-                -->
 
                 <!--
                     Jersey declarative hypermedia support

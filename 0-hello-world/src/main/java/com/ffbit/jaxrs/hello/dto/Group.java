@@ -1,11 +1,8 @@
 package com.ffbit.jaxrs.hello.dto;
 
-import javax.xml.bind.annotation.XmlRootElement;
-
 /**
  * Created by ffbit on 4/15/14.
  */
-@XmlRootElement
 public class Group {
     private int id;
     private String name;
